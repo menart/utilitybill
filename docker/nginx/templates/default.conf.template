@@ -1,17 +1,15 @@
 server {
     listen      80;
-    server_name ${SERVER_NAME} www.${SERVER_NAME};    
+    server_name ${DOMAIN_NAME} www.${DOMAIN_NAME};    
     charset utf-8;
 
 location /api {
-        proxy_pass http://main-app:${SERVER_PORT};
-        proxy_http_version 1.1;
-        add_header Pragma "no-cache";
-        add_header Cache-Control "no-store, must-revalidate";
-        proxy_set_header Host $server_name;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header X-Real-IP $remote_addr;
+     proxy_pass http://utility-bill-main-app:${BACK_PORT};
+     proxy_set_header Host $host:$server_port;
+     proxy_set_header X-Forwarded-Host $server_name;
+     proxy_set_header X-Real-IP $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+ 
     }
 
 location / {
