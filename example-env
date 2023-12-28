@@ -1,0 +1,15 @@
+PG_USER=postgres_user
+PG_USER_PASSWORD=postgres_user_password
+PG_ROOT=postgres_root
+PG_ROOT_PASSWORD=postgres_root_password
+PG_DB=utility_bill
+PG_HOST=utility-bill-postgres
+PG_PORT=5432
+JWT_ENCODER_SECRET=JWT_ENCODER_SECRET
+JWT_ENCODER_ITERATION=64
+JWT_ENCODER_KEY_LENGTH=256
+JWT_EXPIRATION=3600
+JWT_SECRET=secret
+SERVER_PORT=8000
+
+JAVA_OPTS=-jar
