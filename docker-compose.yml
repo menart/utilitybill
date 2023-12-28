@@ -13,7 +13,6 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./app:/app
       - ./docker/nginx/templates:/etc/nginx/templates
       - ./log/nginx:/var/log/nginx
     depends_on:
